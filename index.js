@@ -5,13 +5,13 @@ const questions = [
 
     {
         type: "input",
-        name: "badge",
-        message: "input badge code"
+        name: "title",
+        message: "Title of the project"
     },
     {
         type: "input",
-        name: "title",
-        message: "Title of the project"
+        name: "badge",
+        message: "input badge code"
     },
     {
         type: "input",
@@ -60,6 +60,14 @@ console.clear();
 inquirer
     .prompt(questions).then(response => {
 
+        fs.writeFile('README.md', ("# " + response.title),
+            // callback function that is called after writing file is done
+            function(err) { 
+                if (err) throw err;
+                // if no error
+                console.log("Data is written to file successfully.")
+            });
+
         fs.appendFileSync("README.md", ("# " + response.title) + '\n', function (err) {
             if (err) {
                 return console.log(err);
@@ -81,14 +89,18 @@ inquirer
             console.log("Success!");
         });
 
-        fs.appendFileSync("README.md", ("## Table of Contents" + '\n' + '- ' + response.toc.split(", ").join('\n' + '- ')) + '\n', function (err) {
+        const toc = `## Table of Contents\n- [Description]\n- [Installation Instructions](#InstallInstGo)
+
+        `
+
+        fs.appendFileSync("README.md", toc, function (err) {
             if (err) {
                 return console.log(err);
             }
             console.log("Success!");
         });
 
-        fs.appendFileSync("README.md", ("## Installation Instructions" + '\n' + response.installation) + '\n', function(err) {
+        fs.appendFileSync("README.md", '\n' + ("## Installation Instructions\n<a id=\"InstallInstGo\"></a>" + '\n' + response.installation) + '\n', function(err) {
             if (err) {
                 return console.log(err);
             }
@@ -108,6 +120,31 @@ inquirer
             }
             console.log("Success!");
         });
+
+        fs.appendFileSync("README.md", ("## How to Contribute" + '\n' + response.contributing) + '\n', function(err) {
+            if (err) {
+                return console.log(err);
+            }
+            console.log("Success!");
+        });
+        
+        fs.appendFileSync("README.md", ("## Authors" + '\n' + response.authors) + '\n', function (err) {
+            if (err) {
+                return console.log(err);
+            }
+            console.log("Success!");
+        });
+
+        fs.appendFileSync("README.md", ("## How to Run Tests" + '\n' + response.tests) + '\n', function(err) {
+            if (err) {
+                return console.log(err);
+            }
+            console.log("Success!");
+        });
+
+
+
+
 
 
 
