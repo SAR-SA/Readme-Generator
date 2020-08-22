@@ -16,7 +16,7 @@ const questions = [
     {
         type: "input",
         name: "description",
-        message: "Write a description of you project"
+        message: "Write a description of your project"
     },
     {
         type: "input",
@@ -54,6 +54,16 @@ const questions = [
         name: "tests",
         message: "Run tests here"
     },
+    {
+        type: "input",
+        name: "github",
+        message: "Enter your github profile information"
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "Enter your email"
+    },
 ]
 console.clear();
 
@@ -82,17 +92,9 @@ inquirer
             console.log("Success!");
         });
 
-        fs.appendFileSync("README.md", ("## Description" + '\n' + response.description) + '\n', function (err) {
-            if (err) {
-                return console.log(err);
-            }
-            console.log("Success!");
-        });
-
-        const toc = `## Table of Contents\n- [Description]\n- [Installation Instructions](#InstallInstGo)
+        const toc = `## Table of Contents\n- [Description](#descriptionGo)\n- [Installation Instructions](#installGo)\n- [Usage](#usageGo)\n- [How to Contribute](#contriGo)\n- [Authors](#authorGo)\n- [How to Run Tests](#testsGo)\n- [Contact Information](#contactGo)
 
         `
-
         fs.appendFileSync("README.md", toc, function (err) {
             if (err) {
                 return console.log(err);
@@ -100,49 +102,61 @@ inquirer
             console.log("Success!");
         });
 
-        fs.appendFileSync("README.md", '\n' + ("## Installation Instructions\n<a id=\"InstallInstGo\"></a>" + '\n' + response.installation) + '\n', function(err) {
+        fs.appendFileSync("README.md", ('\n' + "## Description\n<a id=\"descriptionGo\"></a>" + '\n' + response.description) + '\n', function (err) {
             if (err) {
                 return console.log(err);
             }
             console.log("Success!");
         });
 
-        fs.appendFileSync("README.md", ("## Usage" + '\n' + response.usage) + '\n', function(err) {
+        fs.appendFileSync("README.md", '\n' + ("## Installation Instructions\n<a id=\"installGo\"></a>" + '\n' + response.installation) + '\n', function(err) {
             if (err) {
                 return console.log(err);
             }
             console.log("Success!");
         });
 
-        fs.appendFileSync("READEME.md", ("## License" + '\n' + response.license) + '\n', function(err) {
+        fs.appendFileSync("README.md", ("## Usage\n<a id=\"usageGo\"></a>" + '\n' + response.usage) + '\n', function(err) {
             if (err) {
                 return console.log(err);
             }
             console.log("Success!");
         });
 
-        fs.appendFileSync("README.md", ("## How to Contribute" + '\n' + response.contributing) + '\n', function(err) {
+        fs.appendFileSync("README.md", ("## License\n<a id=\"licenseGo\"></a>" + '\n' + response.license) + '\n', function(err) {
+            if (err) {
+                return console.log(err);
+            }
+            console.log("Success!");
+        });
+
+        fs.appendFileSync("README.md", ("## Contribution Guidelines\n<a id=\"contriGo\"></a>" + '\n' + response.contributing) + '\n', function(err) {
             if (err) {
                 return console.log(err);
             }
             console.log("Success!");
         });
         
-        fs.appendFileSync("README.md", ("## Authors" + '\n' + response.authors) + '\n', function (err) {
+        fs.appendFileSync("README.md", ("## Authors\n<a id=\"authorGo\"></a>" + '\n' + response.authors) + '\n', function (err) {
             if (err) {
                 return console.log(err);
             }
             console.log("Success!");
         });
 
-        fs.appendFileSync("README.md", ("## How to Run Tests" + '\n' + response.tests) + '\n', function(err) {
+        fs.appendFileSync("README.md", ("## Tests\n<a id=\"testsGo\"></a>" + '\n' + response.tests) + '\n', function(err) {
             if (err) {
                 return console.log(err);
             }
             console.log("Success!");
         });
 
-
+        fs.appendFileSync("README.md", ("## Questions\n<a id=\"contactGo\"></a>" + '\n' + "Refer to github or send email with any questions:\n" + '\n' + response.github + '\n' + response.email) + '\n', function(err) {
+            if (err) {
+                return console.log(err);
+            }
+            console.log("Success!");
+        });
 
 
 
