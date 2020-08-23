@@ -1,6 +1,8 @@
 var inquirer = require('inquirer');
 const fs = require('fs');
 
+
+//Questions for Readme
 const questions = [
 
     {
@@ -57,7 +59,7 @@ const questions = [
     {
         type: "input",
         name: "github",
-        message: "Enter your github profile information"
+        message: "Enter your github profile "
     },
     {
         type: "input",
@@ -67,6 +69,8 @@ const questions = [
 ]
 console.clear();
 
+
+//Write file and append file
 inquirer
     .prompt(questions).then(response => {
 
@@ -92,8 +96,7 @@ inquirer
             console.log("Success!");
         });
 
-        const toc = `## Table of Contents\n- [Description](#descriptionGo)\n- [Installation Instructions](#installGo)\n- [Usage](#usageGo)\n- [How to Contribute](#contriGo)\n- [Authors](#authorGo)\n- [How to Run Tests](#testsGo)\n- [Contact Information](#contactGo)
-
+        const toc = `## Table of Contents\n- [Description](#descriptiongo)\n- [Installation Instructions](#installgo)\n- [Usage](#usagego)\n- [How to Contribute](#contrigo)\n- [Authors](#authorgo)\n- [How to Run Tests](#testsgo)\n- [Questions](#contactgo)
         `
         fs.appendFileSync("README.md", toc, function (err) {
             if (err) {
@@ -102,90 +105,59 @@ inquirer
             console.log("Success!");
         });
 
-        fs.appendFileSync("README.md", ('\n' + "## Description\n<a id=\"descriptionGo\"></a>" + '\n' + response.description) + '\n', function (err) {
+        fs.appendFileSync("README.md", ('\n' + "## Description<a id='descriptiongo'></a>\n" + '\n' + response.description) + '\n', function (err) {
             if (err) {
                 return console.log(err);
             }
             console.log("Success!");
         });
 
-        fs.appendFileSync("README.md", '\n' + ("## Installation Instructions\n<a id=\"installGo\"></a>" + '\n' + response.installation) + '\n', function(err) {
+        fs.appendFileSync("README.md", '\n' + ("## Installation Instructions<a id=\"installgo\"></a>\n" + '\n' + response.installation) + '\n', function(err) {
             if (err) {
                 return console.log(err);
             }
             console.log("Success!");
         });
 
-        fs.appendFileSync("README.md", ("## Usage\n<a id=\"usageGo\"></a>" + '\n' + response.usage) + '\n', function(err) {
+        fs.appendFileSync("README.md", ("## Usage<a id=\"usagego\"></a>\n" + '\n' + response.usage) + '\n', function(err) {
             if (err) {
                 return console.log(err);
             }
             console.log("Success!");
         });
 
-        fs.appendFileSync("README.md", ("## License\n<a id=\"licenseGo\"></a>" + '\n' + response.license) + '\n', function(err) {
+        fs.appendFileSync("README.md", ("## License<a id=\"licensego\"></a>\n" + '\n' + response.license) + '\n', function(err) {
             if (err) {
                 return console.log(err);
             }
             console.log("Success!");
         });
 
-        fs.appendFileSync("README.md", ("## Contribution Guidelines\n<a id=\"contriGo\"></a>" + '\n' + response.contributing) + '\n', function(err) {
+        fs.appendFileSync("README.md", ("## Contribution Guidelines<a id=\"contrigo\"></a>\n" + '\n' + response.contributing) + '\n', function(err) {
             if (err) {
                 return console.log(err);
             }
             console.log("Success!");
         });
         
-        fs.appendFileSync("README.md", ("## Authors\n<a id=\"authorGo\"></a>" + '\n' + response.authors) + '\n', function (err) {
+        fs.appendFileSync("README.md", ("## Authors<a id=\"authorgo\"></a>\n" + '\n' + response.authors) + '\n', function (err) {
             if (err) {
                 return console.log(err);
             }
             console.log("Success!");
         });
 
-        fs.appendFileSync("README.md", ("## Tests\n<a id=\"testsGo\"></a>" + '\n' + response.tests) + '\n', function(err) {
+        fs.appendFileSync("README.md", ("## Tests<a id=\"testsgo\"></a>\n" + '\n' + response.tests) + '\n', function(err) {
             if (err) {
                 return console.log(err);
             }
             console.log("Success!");
         });
 
-        fs.appendFileSync("README.md", ("## Questions\n<a id=\"contactGo\"></a>" + '\n' + "Refer to github or send email with any questions:\n" + '\n' + response.github + '\n' + response.email) + '\n', function(err) {
+        fs.appendFileSync("README.md", ("## Questions<a id=\"contactgo\"></a>\n" + '\n' + "Refer to github or send email with any questions:\n" + '\n' + response.github + '\n' + '\n' + response.email) + '\n', function(err) {
             if (err) {
                 return console.log(err);
             }
             console.log("Success!");
         });
-
-
-
-
-
     });
-
-// inquirer
-//   .prompt([
-//     /* Pass your questions in here */
-//     {type: "input", name: "title", message: "Readme Title?"},
-//     {type: "input", name: "description", message: "What is the Description of the Program?"}
-//   ])
-//   .then(answers => {
-//     // Use user feedback for... whatever!!
-//     console.log(answers.title);
-//     console.log(answers.description);
-//     fs.writeFile('readme.md',answers.title,
-//     // callback function that is called after writing file is done
-//     function(err) { 
-//         if (err) throw err;
-//         // if no error
-//         console.log("Data is written to file successfully.")
-//     });
-//   })
-//   .catch(error => {
-//     if(error.isTtyError) {
-//       // Prompt couldn't be rendered in the current environment
-//     } else {
-//       // Something else when wrong
-//     }
-//   });

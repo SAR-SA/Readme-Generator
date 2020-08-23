@@ -1,41 +1,41 @@
-# Test 43
+# READEME Generator
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ## Table of Contents
-- [Description](#descriptionGo)
-- [Installation Instructions](#installGo)
-- [Usage](#usageGo)
-- [How to Contribute](#contriGo)
-- [Authors](#authorGo)
-- [How to Run Tests](#testsGo)
-- [Contact Information](#contactGo)
-
+- [Description](#descriptiongo)
+- [Installation Instructions](#installgo)
+- [Usage](#usagego)
+- [How to Contribute](#contrigo)
+- [Authors](#authorgo)
+- [How to Run Tests](#testsgo)
+- [Questions](#contactgo)
         
-## Description
-<a id="descriptionGo"></a>
+## Description<a id='descriptiongo'></a>
 
+A command line application that generates a readme file
 
-## Installation Instructions
-<a id="installGo"></a>
+## Installation Instructions<a id="installgo"></a>
 
-## Usage
-<a id="usageGo"></a>
+NPM, Inquirer install
+## Usage<a id="usagego"></a>
 
-## License
-<a id="licenseGo"></a>
+Used to generate a quality and consistent READE ME file
+## License<a id="licensego"></a>
+
 MIT License
-## Contribution Guidelines
-<a id="contriGo"></a>
+## Contribution Guidelines<a id="contrigo"></a>
 
-## Authors
-<a id="authorGo"></a>
+Follow code of conduct
+## Authors<a id="authorgo"></a>
 
-## Tests
-<a id="testsGo"></a>
+Shawn A. Rather
+## Tests<a id="testsgo"></a>
 
-## Questions
-<a id="contactGo"></a>
+Test 1, Test 2
+## Questions<a id="contactgo"></a>
+
 Refer to github or send email with any questions:
 
 github.com/SAR-SA
-email@email.com
+
+sarsa.web@gmail.com
